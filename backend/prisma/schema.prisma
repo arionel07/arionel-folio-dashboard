@@ -1,0 +1,23 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Transaction {
+  id        Int               @id @default(autoincrement())
+  title     String
+  amount    Float
+  status    TransactionStatus
+  category  String
+  createdAt DateTime          @default(now())
+}
+
+enum TransactionStatus {
+  PENDING
+  COMPLETED
+  CANCELED
+}
