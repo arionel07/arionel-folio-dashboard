@@ -1,10 +1,11 @@
-import prisma from '../prisma'
+import prisma from '../prisma.js'
 
 export async function getAllTransactions(req, res) {
 	try {
 		const transactions = await prisma.transaction.findMany({
 			orderBy: { createdAt: 'desc' }
 		})
+		res.json(transactions)
 	} catch (error) {
 		res.status(500).json({ message: 'Failed to get Transactions' })
 	}
