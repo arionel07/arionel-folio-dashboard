@@ -43,15 +43,30 @@ enum Category {
 }
 
 model User {
-  id            Int           @id @default(autoincrement())
-  email         String        @unique
+  id            Int      @id @default(autoincrement())
+  email         String   @unique
   password      String
-  name          String?
-  balance       Float         @default(0)
-  notifyByEmail Boolean       @default(true)
-  createdAt     DateTime      @default(now())
-  updatedAt     DateTime      @updatedAt
-  transactions  Transaction[]
+  name          String
+  avatar        String?
+  balance       Float    @default(0)
+  notifyByEmail Boolean  @default(true)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  transactions Transaction[]
+  monthlyGoals MonthlyGoal[]
 
   @@map("user")
+}
+
+model MonthlyGoal {
+  id    Int    @id @default(autoincrement())
+  month String // 2026-01
+  limit Float
+
+  userId Int
+  user   User @relation(fields: [userId], references: [id])
+
+  @@unique([userId, month])
+  @@map("monthly_goal")
 }

@@ -8,5 +8,6 @@ router.get('/', protectRoute, transaction.transactionGetAll)
 router.get('/summary', protectRoute, transaction.transactionSummary)
 router.post('/', protectRoute, transaction.transactionCreate)
 router.post('/transfer', protectRoute, transaction.transactionTransfer)
+router.patch('/:id/cancel', protectRoute, transaction.transactionCanceled)
 
 export default router
