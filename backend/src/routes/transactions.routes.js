@@ -1,12 +1,12 @@
 import express from 'express'
-import {
-	createTransaction,
-	getAllTransactions
-} from '../controllers/transactions.controller.js'
+import * as transaction from '../controllers/transactions/transactions.controller.js'
+import { protectRoute } from '../middleware/protectRoute.js'
 
 const router = express.Router()
 
-router.get('/', getAllTransactions)
-router.post('/', createTransaction)
+router.get('/', protectRoute, transaction.transactionGetAll)
+router.get('/summary', protectRoute, transaction.transactionSummary)
+router.post('/', protectRoute, transaction.transactionCreate)
+router.post('/transfer', protectRoute, transaction.transactionTransfer)
 
 export default router
