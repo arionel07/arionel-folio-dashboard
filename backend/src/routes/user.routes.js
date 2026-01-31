@@ -5,5 +5,6 @@ import { protectRoute } from '../middleware/protectRoute.js'
 const route = express.Router()
 
 route.get('/balance', protectRoute, user.userBalance)
+route.patch('/profile', protectRoute, user.userProfile)
 
 export default route
