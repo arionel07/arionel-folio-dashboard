@@ -1,3 +1,4 @@
+import { CiSquarePlus } from 'react-icons/ci'
 import { FiHome, FiSettings, FiUser } from 'react-icons/fi'
 import { NavLink } from 'react-router-dom'
 
@@ -6,7 +7,7 @@ const linkClass =
 
 export function Sidebar() {
 	return (
-		<aside className="w-30 dar:bg-white text-teal-50 bg-[#161616] shadow-md">
+		<aside className="w-30 dark:bg-[#282828] text-teal-50 bg-[#161616] shadow-md">
 			<nav className="flex flex-col items-center justify-between px-2 gap-1">
 				<div className="relative mt-12">
 					<NavLink
@@ -40,6 +41,12 @@ export function Sidebar() {
 						className={linkClass}
 					>
 						<FiHome size={35} />
+					</NavLink>
+					<NavLink
+						to="/create"
+						className={linkClass}
+					>
+						<CiSquarePlus size={35} />
 					</NavLink>
 					<NavLink
 						to="/dashboard/profile"

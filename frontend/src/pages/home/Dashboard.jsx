@@ -1,6 +1,7 @@
 import { Outlet } from 'react-router-dom'
 import { Navbar } from '../../components/uibar/Navbar'
 import { Sidebar } from '../../components/uibar/SideBar'
+import { Transactions } from '../../features/transactions/Transactions'
 
 export default function Dashboard() {
 	return (
@@ -10,6 +11,7 @@ export default function Dashboard() {
 				<Navbar />
 				<main className="p-6">
 					<Outlet />
+					<Transactions />
 				</main>
 			</div>
 		</div>
