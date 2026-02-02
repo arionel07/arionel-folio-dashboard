@@ -13,11 +13,14 @@ export default function Settings() {
 	}
 
 	return (
-		<div>
-			<h4>Settings</h4>
+		<div className="">
+			<h4 className="">Settings</h4>
 
-			<div>
+			<div className="">
 				<span>{user?.name}</span>
+			</div>
+			<div className="">
+				<button>{}</button>
 			</div>
 
 			<button onClick={logout}>Logout</button>

@@ -7,3 +7,9 @@ export const getTransactions = async params => {
 		meta: res.data.meta
 	}
 }
+
+export const createNewTransaction = async data => {
+	const res = await api.post('/transactions', data)
+
+	return res.data
+}

@@ -19,11 +19,7 @@ export function Transactions() {
 		category: ''
 	})
 
-	const {
-		data = { items: [], meta: {} },
-		isLoading,
-		isFetching
-	} = useQuery({
+	const { data = { items: [], meta: {} }, isFetching } = useQuery({
 		queryKey: ['transactions', page, filters],
 		queryFn: () =>
 			getTransactions({

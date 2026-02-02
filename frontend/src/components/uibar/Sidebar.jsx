@@ -43,7 +43,7 @@ export function Sidebar() {
 						<FiHome size={35} />
 					</NavLink>
 					<NavLink
-						to="/create"
+						to="/dashboard/create"
 						className={linkClass}
 					>
 						<CiSquarePlus size={35} />
