@@ -8,7 +8,8 @@ export async function getMe(req, res) {
 			select: {
 				id: true,
 				email: true,
-				name: true
+				name: true,
+				avatar: true
 			}
 		})
 		res.status(200).json(user)

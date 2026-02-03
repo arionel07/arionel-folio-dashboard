@@ -5,8 +5,11 @@ import { BrowserRouter } from 'react-router-dom'
 import App from './App.jsx'
 import { AuthProvider } from './context/AuthContext.jsx'
 import './styles/index.css'
+import { initTheme } from './utils/theme.js'
 
 const queryClient = new QueryClient()
+
+initTheme()
 
 ReactDOM.createRoot(document.getElementById('root')).render(
 	<StrictMode>

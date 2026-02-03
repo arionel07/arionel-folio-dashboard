@@ -5,6 +5,10 @@ export async function getMonthProgress(req, res) {
 		const userId = req.user.id
 		const { month } = req.query
 
+		if (!month) {
+			return res.status(400).json({ error: 'Month is required (YYYY-MM)' })
+		}
+
 		const goal = await prisma.monthlyGoal.findUnique({
 			where: { userId_month: { userId, month } }
 		})

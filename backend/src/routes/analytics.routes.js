@@ -8,6 +8,6 @@ route.get('/summary', protectRoute, analytic.getAnalyticsStat)
 route.get('/monthly', protectRoute, analytic.getMonthStats)
 route.get('/categories', protectRoute, analytic.getCategoryStat)
 route.get('/goals', protectRoute, analytic.monthProgress)
-route.post('/goals', protectRoute, analytic.monthGoal)
+route.post('/goal', protectRoute, analytic.monthGoal)
 
 export default route

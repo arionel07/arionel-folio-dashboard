@@ -7,3 +7,9 @@ export const userBalance = () => {
 		queryFn: getUserBalance
 	})
 }
+export const userSummary = () => {
+	return useQuery({
+		queryKey: ['ExIn'],
+		queryFn: getUserBalance
+	})
+}

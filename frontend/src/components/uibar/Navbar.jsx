@@ -2,6 +2,9 @@ import { CiCalendar, CiSearch } from 'react-icons/ci'
 import { IoIosNotificationsOutline } from 'react-icons/io'
 
 export function Navbar() {
+	const handleAlert = () => {
+		alert('Added to Calendar (its make nothing just alert message)')
+	}
 	return (
 		<header className="px-6 py-12 flex justify-between items-center">
 			<h1 className="text-5xl font-semibold">Track your finance</h1>
@@ -16,10 +19,16 @@ export function Navbar() {
 					/>
 				</div>
 				<div className="flex">
-					<button className="p-3 bg-gray-200 dark:bg-[#282828] rounded-lg mr-4 cursor-pointer">
+					<button
+						onClick={handleAlert}
+						className="p-3 bg-gray-200 dark:bg-[#282828] rounded-lg mr-4 cursor-pointer"
+					>
 						<IoIosNotificationsOutline size={22} />
 					</button>
-					<button className="p-3 bg-gray-200 dark:bg-[#282828] rounded-lg cursor-pointer">
+					<button
+						onClick={handleAlert}
+						className="p-3 bg-gray-200 dark:bg-[#282828] rounded-lg cursor-pointer"
+					>
 						<CiCalendar size={22} />
 					</button>
 				</div>

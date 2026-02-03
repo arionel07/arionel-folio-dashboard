@@ -1,11 +1,14 @@
 import { CiSquarePlus } from 'react-icons/ci'
 import { FiHome, FiSettings, FiUser } from 'react-icons/fi'
 import { NavLink } from 'react-router-dom'
+import avatarPreview from '../../../public/avatar.png'
+import { useAuth } from '../../context/AuthContext'
 
 const linkClass =
 	'flex items-center gap-3 py-10 rounded-lg hover:text-gray-600 transition duration-100'
 
 export function Sidebar() {
+	const { user } = useAuth()
 	return (
 		<aside className="w-30 dark:bg-[#282828] text-teal-50 bg-[#161616] shadow-md">
 			<nav className="flex flex-col items-center justify-between px-2 gap-1">
@@ -63,8 +66,12 @@ export function Sidebar() {
 					</NavLink>
 				</div>
 
-				<div className="absolute bottom-20 ">
-					<span>logo</span>
+				<div className="absolute bottom-20 w-[45px] h-[45px]">
+					<img
+						className="w-full h-full rounded-[100%] "
+						src={user?.avatar || avatarPreview}
+						alt="user profile avatar image"
+					/>
 				</div>
 			</nav>
 		</aside>
