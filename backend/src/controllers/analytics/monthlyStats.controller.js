@@ -18,8 +18,8 @@ export async function getMonthlyStats(req, res) {
 				stats[month] = { income: 0, expense: 0 }
 			}
 
-			if (type === 'EXPENSE') stats[month].expense += tx.amount
-			if (type === 'INCOME') stats[month].income += tx.amount
+			if (tx.type === 'EXPENSE') stats[month].expense += tx.amount
+			if (tx.type === 'INCOME') stats[month].income += tx.amount
 		}
 
 		const result = Object.entries(stats).map(([month, values]) => ({

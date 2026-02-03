@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query'
-import { getUserBalance } from '../../api/api.user'
+import { getSummary, getUserBalance } from '../../api/api.user'
 
 export const userBalance = () => {
 	return useQuery({
@@ -10,6 +10,6 @@ export const userBalance = () => {
 export const userSummary = () => {
 	return useQuery({
 		queryKey: ['ExIn'],
-		queryFn: getUserBalance
+		queryFn: getSummary
 	})
 }

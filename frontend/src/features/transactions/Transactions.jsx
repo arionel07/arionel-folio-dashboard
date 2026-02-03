@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query'
-import { useState } from 'react'
+import { memo, useState } from 'react'
 import { GoArrowUpLeft } from 'react-icons/go'
 import { getTransactions } from '../../api/transactions.api.js'
 import { formatDate } from '../../utils/formatDate.js'
@@ -12,7 +12,7 @@ import {
 import { truncateText } from '../../utils/truncate.js'
 import { TransactionsFilters } from './TransactionsFilters'
 
-export function Transactions() {
+function Transactions() {
 	const [page, setPage] = useState(1)
 	const [filters, setFilters] = useState({
 		status: '',
@@ -125,3 +125,5 @@ export function Transactions() {
 		</div>
 	)
 }
+
+export default memo(Transactions)
